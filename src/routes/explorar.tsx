@@ -15,9 +15,11 @@ export const Route = createFileRoute("/explorar")({
   validateSearch: schema,
   head: () => ({
     meta: [
-      { title: "Explorar — FRAME" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Explorar — Vimo" },
       { name: "description", content: "Busque e filtre filmes e séries por tipo e tema." },
-      { property: "og:title", content: "Explorar — FRAME" },
+      { property: "og:title", content: "Explorar — Vimo" },
       { property: "og:description", content: "Busque e filtre filmes e séries por tipo e tema." },
     ],
   }),

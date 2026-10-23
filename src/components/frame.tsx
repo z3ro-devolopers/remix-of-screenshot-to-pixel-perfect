@@ -1,3 +1,4 @@
+import { Brand } from "@/components/brand";
 import { Link } from "@tanstack/react-router";
 import { Compass, Film, Home, Search } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
@@ -59,8 +60,8 @@ export function Shell({ children }: { children: ReactNode }) {
     <div className="min-h-screen overflow-x-hidden">
       <header className="glass sticky top-0 z-30 border-b border-border">
         <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 md:px-8">
-          <Link to="/" className="text-xl font-extrabold tracking-[0.25em]">
-            FR<span className="text-primary">A</span>ME
+          <Link to="/" className="inline-flex items-center" aria-label="Vimo — Início">
+            <Brand />
           </Link>
           <nav className="hidden items-center gap-1 md:flex">
             <Link to="/" className={nav} activeProps={navActive} activeOptions={{ exact: true }}>Início</Link>

@@ -12,14 +12,16 @@ export const Route = createFileRoute("/obra/$id")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.titulo} — FRAME` },
+          { property: "og:type", content: "website" },
+          { name: "twitter:card", content: "summary_large_image" },
+          { title: `${loaderData.titulo} — Vimo` },
           { name: "description", content: loaderData.sinopse },
-          { property: "og:title", content: `${loaderData.titulo} — FRAME` },
+          { property: "og:title", content: `${loaderData.titulo} — Vimo` },
           { property: "og:description", content: loaderData.sinopse },
           { property: "og:image", content: loaderData.backdrop },
           { name: "twitter:image", content: loaderData.backdrop },
         ]
-      : [{ title: "Obra não encontrada — FRAME" }, { name: "robots", content: "noindex" }],
+      : [{ title: "Obra não encontrada — Vimo" }, { name: "description", content: "Esta obra não está no catálogo do Vimo." }, { property: "og:title", content: "Obra não encontrada — Vimo" }, { property: "og:description", content: "Esta obra não está no catálogo do Vimo." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }, { name: "robots", content: "noindex" }],
   }),
   component: Detalhes,
 });
