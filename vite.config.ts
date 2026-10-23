@@ -8,7 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { VitePWA } from "vite-plugin-pwa";
 
 // Bump to invalidate the offline UI cache on the next release.
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 
 export default defineConfig({
   tanstackStart: {
@@ -29,7 +29,10 @@ export default defineConfig({
           globDirectory: "dist/client",
           cacheId: `frame-${CACHE_VERSION}`,
           globPatterns: ["**/*.{js,css,woff2,png,svg,ico,webmanifest}"],
-          additionalManifestEntries: [{ url: "/", revision: `${CACHE_VERSION}-${Date.now()}` }],
+           additionalManifestEntries: [
+             { url: "/", revision: `${CACHE_VERSION}-${Date.now()}` },
+             { url: "/__l5e/assets-v1/d12304db-361f-43d8-a59c-b59c3483eb3c/vimo-symbol.svg", revision: "d12304db-361f-43d8-a59c-b59c3483eb3c" },
+           ],
           cleanupOutdatedCaches: true,
           navigateFallback: null,
           runtimeCaching: [

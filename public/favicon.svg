@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Vimo — Projeção</title>
+  <desc id="desc">Dois feixes verde-menta formam um V sobre fundo quase preto.</desc>
+  <rect id="background" width="512" height="512" rx="112" fill="#090B10"/>
+  <g id="symbol" fill="#36D6BB">
+    <path id="beam-left" d="M106 155 C99 139 108 125 126 116 C153 103 184 103 204 113 C212 117 215 123 217 134 L280 419 C283 431 276 439 265 436 C260 435 257 432 254 426 Z"/>
+    <path id="beam-right" d="M320 207 C322 193 332 188 348 185 C373 181 397 186 411 197 C420 204 420 212 414 221 L304 405 C299 413 291 412 289 405 C288 402 289 397 290 393 Z"/>
+  </g>
+</svg>

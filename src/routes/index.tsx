@@ -8,9 +8,11 @@ import { getObra, obras, paraExplorar, parecidosComOnda, porque, TEMAS } from "@
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FRAME — Descubra filmes e séries" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Vimo — Descubra filmes e séries" },
       { name: "description", content: "Descubra e organize filmes e séries pela personalidade de cada obra." },
-      { property: "og:title", content: "FRAME — Descubra filmes e séries" },
+      { property: "og:title", content: "Vimo — Descubra filmes e séries" },
       { property: "og:description", content: "Descubra e organize filmes e séries pela personalidade de cada obra." },
     ],
   }),

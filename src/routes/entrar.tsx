@@ -1,3 +1,4 @@
+import { Brand } from "@/components/brand";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Eye, EyeOff, Info } from "lucide-react";
 import { useState, type FormEvent } from "react";
@@ -8,10 +9,12 @@ import { introducaoConcluida } from "@/data/preferencias";
 export const Route = createFileRoute("/entrar")({
   head: () => ({
     meta: [
-      { title: "Entrar — FRAME" },
-      { name: "description", content: "Entre no FRAME para começar a descobrir filmes e séries." },
-      { property: "og:title", content: "Entrar — FRAME" },
-      { property: "og:description", content: "Entre no FRAME para começar a descobrir filmes e séries." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Entrar — Vimo" },
+      { name: "description", content: "Entre no Vimo para começar a descobrir filmes e séries." },
+      { property: "og:title", content: "Entrar — Vimo" },
+      { property: "og:description", content: "Entre no Vimo para começar a descobrir filmes e séries." },
     ],
   }),
   component: Entrar,
@@ -50,10 +53,8 @@ function Entrar() {
 
       <div className="flex flex-col justify-center px-4 py-10 md:px-16">
         <div className="mx-auto w-full max-w-sm">
-          <p className="text-xl font-extrabold tracking-[0.25em]">
-            FR<span className="text-primary">A</span>ME
-          </p>
-          <h1 className="mt-6 text-3xl font-extrabold leading-tight">Sua próxima descoberta começa aqui</h1>
+          <Brand />
+          <h1 className="mt-6 text-3xl font-extrabold leading-tight">Histórias que combinam com você.</h1>
           <p className="mt-3 flex items-center gap-2 rounded-xl bg-card px-3 py-2 text-xs text-muted-foreground ring-1 ring-border">
             <Info className="h-4 w-4 shrink-0" /> Formulário de demonstração. Nenhum dado é enviado ou salvo.
           </p>

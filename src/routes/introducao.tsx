@@ -1,3 +1,4 @@
+import { Brand } from "@/components/brand";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
@@ -17,10 +18,12 @@ import {
 export const Route = createFileRoute("/introducao")({
   head: () => ({
     meta: [
-      { title: "Seu gosto — FRAME" },
-      { name: "description", content: "Conte o que você gosta de assistir para o FRAME ordenar suas descobertas." },
-      { property: "og:title", content: "Seu gosto — FRAME" },
-      { property: "og:description", content: "Conte o que você gosta de assistir para o FRAME ordenar suas descobertas." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Seu gosto — Vimo" },
+      { name: "description", content: "Conte o que você gosta de assistir para o Vimo ordenar suas descobertas." },
+      { property: "og:title", content: "Seu gosto — Vimo" },
+      { property: "og:description", content: "Conte o que você gosta de assistir para o Vimo ordenar suas descobertas." },
     ],
   }),
   component: Introducao,
@@ -123,9 +126,7 @@ function Introducao() {
   return (
     <div className="mx-auto flex min-h-screen max-w-3xl flex-col px-4 py-6 md:py-12">
       <div className="flex items-center justify-between">
-        <p className="text-lg font-extrabold tracking-[0.25em]">
-          FR<span className="text-primary">A</span>ME
-        </p>
+        <Brand />
         <button onClick={() => sair(false)} className="min-h-11 px-2 text-sm text-muted-foreground hover:text-foreground">
           Pular por enquanto
         </button>
@@ -149,7 +150,7 @@ function Introducao() {
             onClick={() => (etapa < 2 ? setEtapa(etapa + 1) : sair(true))}
             className="min-h-11 flex-[2] rounded-full bg-primary font-semibold text-primary-foreground"
           >
-            {etapa < 2 ? "Continuar" : "Explorar o FRAME"}
+            {etapa < 2 ? "Continuar" : "Explorar o Vimo"}
           </button>
         </div>
       </div>
