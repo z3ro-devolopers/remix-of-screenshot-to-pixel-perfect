@@ -93,7 +93,7 @@ export const obras: Obra[] = [
       "Uma linguista é recrutada para se comunicar com visitantes alienígenas antes que a tensão global se torne guerra.",
     personalidade: ["Contemplativo", "Investigação científica", "Mistério"],
     poster: `${T}w500/x2FJsf1ElAgr63Y3PNPtJrcmpoe.jpg`,
-    backdrop: `${T}w1280/yIZ1xendyqKvY3FGeeUYUd5X9Mm.jpg`,
+    backdrop: `${T}w1280/8MUZz7oPXQftFTslZpRP3CVMOoq.jpg`,
   },
   {
     id: "twisters",
@@ -119,7 +119,7 @@ export const obras: Obra[] = [
       "O desaparecimento de duas crianças em uma pequena cidade alemã revela segredos que atravessam gerações e o próprio tempo.",
     personalidade: ["Mistério", "Tensão crescente", "Narrativa complexa"],
     poster: `${T}w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg`,
-    backdrop: `${T}w1280/3lBDg3i6nBs8n8pAElcuiyfqRpG.jpg`,
+    backdrop: `${T}w1280/3jDXL4Xvj3AzDOF6UH1xeyHW8MH.jpg`,
   },
 ];
 

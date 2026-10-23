@@ -10,13 +10,13 @@ export function Img({ src, alt, className }: { src: string; alt: string; classNa
   if (err || !mounted)
     return (
       <div className={`img-fallback flex items-center justify-center ${className ?? ""}`}>
-        <Film className="h-8 w-8 text-muted-foreground" aria-hidden />
+        <Film className="h-6 w-6 text-muted-foreground" aria-hidden />
       </div>
     );
   return <img src={src} alt={alt} loading="lazy" onError={() => setErr(true)} className={`object-cover ${className ?? ""}`} />;
 }
 
-export function PosterCard({ obra }: { obra: Obra }) {
+export function PosterCard({ obra, motivo }: { obra: Obra; motivo?: string }) {
   return (
     <Link to="/obra/$id" params={{ id: obra.id }} className="group block min-w-0">
       <div className="aspect-[2/3] overflow-hidden rounded-xl bg-card ring-1 ring-border transition group-hover:ring-primary">
@@ -26,6 +26,7 @@ export function PosterCard({ obra }: { obra: Obra }) {
       <p className="text-xs text-muted-foreground">
         {obra.ano} · {obra.tipo === "filme" ? "Filme" : "Série"}
       </p>
+      {motivo && <p className="mt-1 line-clamp-2 text-xs text-primary">Também tem: {motivo}</p>}
     </Link>
   );
 }
