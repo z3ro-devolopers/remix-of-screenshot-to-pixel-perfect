@@ -56,7 +56,7 @@ function Inicio() {
 
       <Section title="Filmes e séries para explorar">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {[obras[7], obras[4], obras[5], obras[1]].map((o) => (
+          {obras.filter((o) => ["dark", "interestelar", "a-chegada", "terremoto"].includes(o.id)).map((o) => (
             <PosterCard key={o.id} obra={o} />
           ))}
         </div>
