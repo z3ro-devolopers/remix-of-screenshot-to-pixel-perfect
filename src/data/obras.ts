@@ -27,8 +27,8 @@ export const obras: Obra[] = [
     sinopse:
       "Um geólogo percebe sinais de que a montanha sobre o fiorde de Geiranger vai desabar. Quando o alarme soa, restam apenas dez minutos antes que um tsunami atinja a cidade.",
     personalidade: ["Tensão crescente", "Investigação científica", "Sobrevivência", "Laços familiares"],
-    poster: "https://media.themoviedb.org/t/p/w500/nUra0UF9MLlTRZH9LCA8xYvhd6D.jpg",
-    backdrop: "https://media.themoviedb.org/t/p/w1280/xFA39KxZYLIB6N5CnAqreqHArob.jpg",
+    poster: "https://image.tmdb.org/t/p/w500/nUra0UF9MLlTRZH9LCA8xYvhd6D.jpg",
+    backdrop: "https://image.tmdb.org/t/p/w1280/xFA39KxZYLIB6N5CnAqreqHArob.jpg",
   },
   {
     id: "terremoto",
@@ -40,8 +40,8 @@ export const obras: Obra[] = [
     sinopse:
       "Três anos após o tsunami de Geiranger, o geólogo Kristian descobre indícios de que um grande terremoto está prestes a atingir Oslo.",
     personalidade: ["Tensão crescente", "Investigação científica", "Sobrevivência", "Laços familiares"],
-    poster: "https://media.themoviedb.org/t/p/w500/tbP1vcLKUXRJkuffFe3bfOaRRKQ.jpg",
-    backdrop: "https://media.themoviedb.org/t/p/w1280/vEzvmmLkt64eV1CcWteCo28bCAC.jpg",
+    poster: "https://image.tmdb.org/t/p/w500/tbP1vcLKUXRJkuffFe3bfOaRRKQ.jpg",
+    backdrop: "https://image.tmdb.org/t/p/w1280/vEzvmmLkt64eV1CcWteCo28bCAC.jpg",
   },
   {
     id: "mar-em-chamas",
@@ -53,8 +53,8 @@ export const obras: Obra[] = [
     sinopse:
       "Na costa norueguesa, o colapso de plataformas de petróleo desencadeia uma corrida contra o tempo em alto-mar.",
     personalidade: ["Tensão crescente", "Sobrevivência", "Ambiente isolado"],
-    poster: "https://media.themoviedb.org/t/p/w500/1bB7uV5ljDWKG2m5Z4cgWwDMAeY.jpg",
-    backdrop: "https://media.themoviedb.org/t/p/w1280/9JLl9UYkcWbkLWWHtzuVB6fc9Qr.jpg",
+    poster: "https://image.tmdb.org/t/p/w500/1bB7uV5ljDWKG2m5Z4cgWwDMAeY.jpg",
+    backdrop: "https://image.tmdb.org/t/p/w1280/9JLl9UYkcWbkLWWHtzuVB6fc9Qr.jpg",
   },
   {
     id: "dia-depois",
@@ -66,8 +66,8 @@ export const obras: Obra[] = [
     sinopse:
       "Um climatologista tenta alertar o mundo sobre uma nova era glacial enquanto parte para resgatar o filho em Nova York.",
     personalidade: ["Escala épica", "Investigação científica", "Sobrevivência"],
-    poster: "https://media.themoviedb.org/t/p/w500/Wr4HeYQRvwVCxzOV5TmGE7UkXq.jpg",
-    backdrop: "https://media.themoviedb.org/t/p/w1280/smqQ71MIn1DSdSiQzCzCOV6rgRq.jpg",
+    poster: "https://image.tmdb.org/t/p/w500/Wr4HeYQRvwVCxzOV5TmGE7UkXq.jpg",
+    backdrop: "https://image.tmdb.org/t/p/w1280/smqQ71MIn1DSdSiQzCzCOV6rgRq.jpg",
   },
   {
     id: "interestelar",
