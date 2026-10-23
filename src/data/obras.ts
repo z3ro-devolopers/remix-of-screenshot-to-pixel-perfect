@@ -27,21 +27,21 @@ export const obras: Obra[] = [
     sinopse:
       "Um geólogo percebe sinais de que a montanha sobre o fiorde de Geiranger vai desabar. Quando o alarme soa, restam apenas dez minutos antes que um tsunami atinja a cidade.",
     personalidade: ["Tensão crescente", "Investigação científica", "Sobrevivência", "Laços familiares"],
-    poster: `${T}w500/9GXFZCrGHvVJb3VxmY3ZgEKKpGs.jpg`,
-    backdrop: `${T}w1280/xGZsNx4tCq2Jl3Ow1YxIBu1mE0P.jpg`,
+    poster: "https://media.themoviedb.org/t/p/w500/nUra0UF9MLlTRZH9LCA8xYvhd6D.jpg",
+    backdrop: "https://media.themoviedb.org/t/p/w1280/xFA39KxZYLIB6N5CnAqreqHArob.jpg",
   },
   {
     id: "terremoto",
-    titulo: "Terremoto: A Falha de San Andreas",
-    ano: 2015,
+    titulo: "Terremoto",
+    ano: 2018,
     tipo: "filme",
-    generos: ["Ação", "Aventura"],
-    temas: ["Desastres naturais"],
+    generos: ["Ação", "Drama", "Thriller"],
+    temas: ["Desastres naturais", "Investigação"],
     sinopse:
-      "Após um terremoto devastador na Califórnia, um piloto de resgate atravessa o estado para encontrar a filha.",
-    personalidade: ["Ação constante", "Sobrevivência", "Escala épica"],
-    poster: `${T}w500/2Gfjn962aaFSD6eST6QU3oLDZTo.jpg`,
-    backdrop: `${T}w1280/cUfGqafAVQkatQ7N4y08RNV3bgu.jpg`,
+      "Três anos após o tsunami de Geiranger, o geólogo Kristian descobre indícios de que um grande terremoto está prestes a atingir Oslo.",
+    personalidade: ["Tensão crescente", "Investigação científica", "Sobrevivência", "Laços familiares"],
+    poster: "https://media.themoviedb.org/t/p/w500/tbP1vcLKUXRJkuffFe3bfOaRRKQ.jpg",
+    backdrop: "https://media.themoviedb.org/t/p/w1280/vEzvmmLkt64eV1CcWteCo28bCAC.jpg",
   },
   {
     id: "mar-em-chamas",
@@ -53,8 +53,8 @@ export const obras: Obra[] = [
     sinopse:
       "Na costa norueguesa, o colapso de plataformas de petróleo desencadeia uma corrida contra o tempo em alto-mar.",
     personalidade: ["Tensão crescente", "Sobrevivência", "Ambiente isolado"],
-    poster: `${T}w500/hXeXIoS5gIqUzGlwyW8j1ztcjkY.jpg`,
-    backdrop: `${T}w1280/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg`,
+    poster: "https://media.themoviedb.org/t/p/w500/1bB7uV5ljDWKG2m5Z4cgWwDMAeY.jpg",
+    backdrop: "https://media.themoviedb.org/t/p/w1280/9JLl9UYkcWbkLWWHtzuVB6fc9Qr.jpg",
   },
   {
     id: "dia-depois",
@@ -66,8 +66,8 @@ export const obras: Obra[] = [
     sinopse:
       "Um climatologista tenta alertar o mundo sobre uma nova era glacial enquanto parte para resgatar o filho em Nova York.",
     personalidade: ["Escala épica", "Investigação científica", "Sobrevivência"],
-    poster: `${T}w500/1fg1EOdgTkqz1E0GR5VSexoGTPS.jpg`,
-    backdrop: `${T}w1280/hS6b0pM2EwlvF8ZqMGZiXvWVFQV.jpg`,
+    poster: "https://media.themoviedb.org/t/p/w500/Wr4HeYQRvwVCxzOV5TmGE7UkXq.jpg",
+    backdrop: "https://media.themoviedb.org/t/p/w1280/smqQ71MIn1DSdSiQzCzCOV6rgRq.jpg",
   },
   {
     id: "interestelar",
@@ -124,6 +124,14 @@ export const obras: Obra[] = [
 ];
 
 export const getObra = (id: string) => obras.find((o) => o.id === id);
+
+export const parecidosComOnda = ["terremoto", "mar-em-chamas", "twisters", "dia-depois"];
+export const paraExplorar = ["interestelar", "a-chegada", "dark"];
+
+export const porque = (base: Obra, o: Obra) => {
+  const comuns = o.personalidade.filter((t) => base.personalidade.includes(t)).slice(0, 2);
+  return comuns.length ? comuns.join(" · ") : o.temas[0];
+};
 
 export const relacionadas = (obra: Obra, n = 4) =>
   obras
