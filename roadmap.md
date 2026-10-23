@@ -1,0 +1,3 @@
+- [ ] Apply Vimo identity and metadata without changing layouts or saved-data keys.
+- [ ] Derive favicon and PWA icons from the official SVG; update manifest and cache version.
+- [ ] Verify mobile/desktop branding and existing preference/navigation tests.
