@@ -23,8 +23,10 @@ export default defineConfig({
         injectRegister: null,
         manifest: false,
         filename: "sw.js",
+        outDir: "dist/client",
         devOptions: { enabled: false },
         workbox: {
+          globDirectory: "dist/client",
           cacheId: `frame-${CACHE_VERSION}`,
           globPatterns: ["**/*.{js,css,woff2,png,svg,ico,webmanifest}"],
           additionalManifestEntries: [{ url: "/", revision: `${CACHE_VERSION}-${Date.now()}` }],
