@@ -16,7 +16,7 @@ export function Img({ src, alt, className }: { src: string; alt: string; classNa
   return <img src={src} alt={alt} loading="lazy" onError={() => setErr(true)} className={`object-cover ${className ?? ""}`} />;
 }
 
-export function PosterCard({ obra, motivo }: { obra: Obra; motivo?: string }) {
+export function PosterCard({ obra, motivo }: { obra: Obra; motivo?: string | undefined }) {
   return (
     <Link to="/obra/$id" params={{ id: obra.id }} className="group block min-w-0">
       <div className="aspect-[2/3] overflow-hidden rounded-xl bg-card ring-1 ring-border transition group-hover:ring-primary">
