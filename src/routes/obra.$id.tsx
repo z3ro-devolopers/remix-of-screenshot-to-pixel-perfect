@@ -46,8 +46,8 @@ function Detalhes() {
       </section>
 
       <div className="relative -mt-20 grid gap-6 md:-mt-32 md:grid-cols-[240px_1fr] md:px-10 lg:gap-10">
-        <div className="mx-auto w-40 overflow-hidden rounded-xl shadow-poster ring-1 ring-border md:w-full">
-          <Img src={obra.poster} alt={obra.titulo} className="aspect-[2/3] w-full" />
+        <div className="mx-auto w-40 self-start overflow-hidden rounded-xl shadow-poster ring-1 ring-border md:w-full">
+          <Img src={obra.poster} alt={obra.titulo} className="block aspect-[2/3] w-full" />
         </div>
         <div className="md:pt-36">
           <h1 className="text-3xl font-extrabold md:text-5xl">{obra.titulo}</h1>
