@@ -1,6 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Info } from "lucide-react";
 import { Img, PosterCard, PosterGrid, Section, Shell } from "@/components/frame";
+import { introducaoConcluida, lerPreferencias, ordenar, type Preferencias } from "@/data/preferencias";
 import { getObra, obras, paraExplorar, parecidosComOnda, porque, TEMAS } from "@/data/obras";
 
 export const Route = createFileRoute("/")({
@@ -17,6 +19,12 @@ export const Route = createFileRoute("/")({
 
 function Inicio() {
   const onda = getObra("a-onda")!;
+  const navigate = useNavigate();
+  const [prefs, setPrefs] = useState<Preferencias | null>(null);
+  useEffect(() => {
+    if (!introducaoConcluida()) navigate({ to: "/entrar", replace: true });
+    else setPrefs(lerPreferencias());
+  }, [navigate]);
   return (
     <Shell>
       <section className="relative -mx-4 overflow-hidden md:mx-0 md:mt-6 md:rounded-2xl">
@@ -52,7 +60,7 @@ function Inicio() {
 
       <Section title="Porque você gostou de A Onda">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {obras.filter((o) => parecidosComOnda.includes(o.id)).map((o) => (
+          {ordenar(obras.filter((o) => parecidosComOnda.includes(o.id)), prefs, obras).map((o) => (
             <PosterCard key={o.id} obra={o} motivo={porque(onda, o)} />
           ))}
         </div>
@@ -60,7 +68,7 @@ function Inicio() {
 
       <Section title="Filmes e séries para explorar">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {obras.filter((o) => paraExplorar.includes(o.id)).map((o) => (
+          {ordenar(obras.filter((o) => paraExplorar.includes(o.id)), prefs, obras).map((o) => (
             <PosterCard key={o.id} obra={o} />
           ))}
         </div>

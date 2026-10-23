@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as ExplorarRouteImport } from './routes/explorar'
+import { Route as IntroducaoRouteImport } from './routes/introducao'
 import { Route as ObraIdRouteImport } from './routes/obra.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -18,9 +20,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExplorarRoute = ExplorarRouteImport.update({
   id: '/explorar',
   path: '/explorar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntroducaoRoute = IntroducaoRouteImport.update({
+  id: '/introducao',
+  path: '/introducao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ObraIdRoute = ObraIdRouteImport.update({
@@ -31,31 +43,39 @@ const ObraIdRoute = ObraIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/entrar': typeof EntrarRoute
   '/explorar': typeof ExplorarRoute
+  '/introducao': typeof IntroducaoRoute
   '/obra/$id': typeof ObraIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/entrar': typeof EntrarRoute
   '/explorar': typeof ExplorarRoute
+  '/introducao': typeof IntroducaoRoute
   '/obra/$id': typeof ObraIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/entrar': typeof EntrarRoute
   '/explorar': typeof ExplorarRoute
+  '/introducao': typeof IntroducaoRoute
   '/obra/$id': typeof ObraIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/explorar' | '/obra/$id'
+  fullPaths: '/' | '/entrar' | '/explorar' | '/introducao' | '/obra/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/explorar' | '/obra/$id'
-  id: '__root__' | '/' | '/explorar' | '/obra/$id'
+  to: '/' | '/entrar' | '/explorar' | '/introducao' | '/obra/$id'
+  id: '__root__' | '/' | '/entrar' | '/explorar' | '/introducao' | '/obra/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EntrarRoute: typeof EntrarRoute
   ExplorarRoute: typeof ExplorarRoute
+  IntroducaoRoute: typeof IntroducaoRoute
   ObraIdRoute: typeof ObraIdRoute
 }
 
@@ -68,11 +88,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/explorar': {
       id: '/explorar'
       path: '/explorar'
       fullPath: '/explorar'
       preLoaderRoute: typeof ExplorarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/introducao': {
+      id: '/introducao'
+      path: '/introducao'
+      fullPath: '/introducao'
+      preLoaderRoute: typeof IntroducaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/obra/$id': {
@@ -87,7 +121,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EntrarRoute: EntrarRoute,
   ExplorarRoute: ExplorarRoute,
+  IntroducaoRoute: IntroducaoRoute,
   ObraIdRoute: ObraIdRoute,
 }
 export const routeTree = rootRouteImport

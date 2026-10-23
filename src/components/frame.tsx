@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Compass, Film, Home, Search } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import type { Obra } from "@/data/obras";
+import { InstallButton } from "@/components/pwa";
 
 export function Img({ src, alt, className }: { src: string; alt: string; className?: string }) {
   const [err, setErr] = useState(false);
@@ -65,6 +66,8 @@ export function Shell({ children }: { children: ReactNode }) {
             <Link to="/" className={nav} activeProps={navActive} activeOptions={{ exact: true }}>Início</Link>
             <Link to="/explorar" className={nav} activeProps={navActive}>Explorar</Link>
           </nav>
+          <div className="flex items-center gap-1">
+          <InstallButton />
           <Link
             to="/explorar"
             aria-label="Buscar"
@@ -73,6 +76,7 @@ export function Shell({ children }: { children: ReactNode }) {
             <Search className="h-4 w-4" />
             <span className="hidden md:inline">Buscar filmes e séries</span>
           </Link>
+          </div>
         </div>
       </header>
       <main className="mx-auto max-w-[1400px] px-4 pb-28 md:px-8 md:pb-16">{children}</main>
