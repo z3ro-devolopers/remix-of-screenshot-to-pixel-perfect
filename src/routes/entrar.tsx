@@ -1,9 +1,9 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Eye, EyeOff, Info } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Img } from "@/components/frame";
 import { obras } from "@/data/obras";
-import { concluirIntroducao, introducaoConcluida } from "@/data/preferencias";
+import { introducaoConcluida } from "@/data/preferencias";
 
 export const Route = createFileRoute("/entrar")({
   head: () => ({
@@ -96,7 +96,6 @@ function Entrar() {
           <button onClick={seguir} className="mt-4 min-h-11 w-full rounded-full text-sm text-muted-foreground ring-1 ring-border hover:text-foreground">
             Explorar sem conta
           </button>
-          <Link to="/" onClick={() => concluirIntroducao()} className="sr-only">Ir para o início</Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { SlidersHorizontal, X, Search } from "lucide-react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Sparkles, SlidersHorizontal, X, Search } from "lucide-react";
 import { useState } from "react";
 import { z } from "zod";
 import { PosterGrid, Shell } from "@/components/frame";
@@ -65,7 +65,12 @@ function Explorar() {
 
   return (
     <Shell>
-      <h1 className="mt-6 text-2xl font-bold md:text-3xl">Explorar</h1>
+      <div className="mt-6 flex items-center justify-between gap-2">
+        <h1 className="text-2xl font-bold md:text-3xl">Explorar</h1>
+        <Link to="/introducao" className="inline-flex min-h-11 items-center gap-2 px-2 text-sm text-muted-foreground hover:text-foreground">
+          <Sparkles className="h-4 w-4" /> Ajustar preferências
+        </Link>
+      </div>
       <div className="mt-4 flex gap-2">
         <label className="flex min-h-11 flex-1 items-center gap-2 rounded-full bg-card px-4 ring-1 ring-border focus-within:ring-primary">
           <Search className="h-4 w-4 text-muted-foreground" />
