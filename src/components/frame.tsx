@@ -1,17 +1,22 @@
 import { Link } from "@tanstack/react-router";
 import { Compass, Film, Home, Search } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { Obra } from "@/data/obras";
 
 export function Img({ src, alt, className }: { src: string; alt: string; className?: string }) {
   const [err, setErr] = useState(false);
+  const ref = useRef<HTMLImageElement>(null);
+  useEffect(() => {
+    const i = ref.current;
+    if (i && i.complete && i.naturalWidth === 0) setErr(true);
+  }, [src]);
   if (err)
     return (
       <div className={`img-fallback flex items-center justify-center ${className ?? ""}`}>
         <Film className="h-8 w-8 text-muted-foreground" aria-hidden />
       </div>
     );
-  return <img src={src} alt={alt} loading="lazy" onError={() => setErr(true)} className={`object-cover ${className ?? ""}`} />;
+  return <img ref={ref} src={src} alt={alt} loading="lazy" onError={() => setErr(true)} className={`object-cover ${className ?? ""}`} />;
 }
 
 export function PosterCard({ obra }: { obra: Obra }) {
