@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Info } from "lucide-react";
 import { Img, PosterCard, PosterGrid, Section, Shell } from "@/components/frame";
-import { getObra, obras, relacionadas, TEMAS } from "@/data/obras";
+import { getObra, obras, paraExplorar, parecidosComOnda, porque, TEMAS } from "@/data/obras";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,7 +22,7 @@ function Inicio() {
       <section className="relative -mx-4 overflow-hidden md:mx-0 md:mt-6 md:rounded-2xl">
         <Img src={onda.backdrop} alt="" className="absolute inset-0 h-full w-full" />
         <div className="hero-overlay absolute inset-0" />
-        <div className="relative flex min-h-[460px] flex-col justify-end p-4 md:min-h-[520px] md:max-w-2xl md:p-12">
+        <div className="relative flex min-h-[340px] flex-col justify-end p-4 md:min-h-[380px] md:max-w-2xl md:p-12">
           <span className="text-xs font-semibold uppercase tracking-widest text-primary">Em destaque</span>
           <h1 className="mt-2 text-4xl font-extrabold md:text-6xl">{onda.titulo}</h1>
           <p className="mt-1 text-sm text-muted-foreground">{onda.ano} · Filme · {onda.generos.join(", ")}</p>
@@ -51,12 +51,16 @@ function Inicio() {
       </div>
 
       <Section title="Porque você gostou de A Onda">
-        <PosterGrid obras={relacionadas(onda, 6)} />
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {obras.filter((o) => parecidosComOnda.includes(o.id)).map((o) => (
+            <PosterCard key={o.id} obra={o} motivo={porque(onda, o)} />
+          ))}
+        </div>
       </Section>
 
       <Section title="Filmes e séries para explorar">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {obras.filter((o) => ["dark", "interestelar", "a-chegada", "terremoto"].includes(o.id)).map((o) => (
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {obras.filter((o) => paraExplorar.includes(o.id)).map((o) => (
             <PosterCard key={o.id} obra={o} />
           ))}
         </div>
